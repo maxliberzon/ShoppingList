@@ -17,7 +17,7 @@ namespace maxshoppinglist
             //once we have this array, ask the user to enter the items that they want, and store each one into the array
 
             int size;
-            
+
 
 
             Console.WriteLine("Enter a size.");
@@ -27,23 +27,32 @@ namespace maxshoppinglist
             string[] items = new string[size];
 
             Console.WriteLine("Enter the items that you want.");
-            
+
 
             for (int i = 0; i < items.Length; i++)
             {
                 Console.Write("item: ");
                 items[i] = Console.ReadLine();
 
-                
+
             }
 
-            Console.WriteLine("");
 
-           for(int i = 0; i < items.Length; i++)
+
+            Console.WriteLine("");
+            Console.WriteLine("Shopping List:");
+            Console.WriteLine("");
+            for (int i = 0; i < items.Length; i++)
             {
                 Console.WriteLine(items[i]);
             }
-
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("Chose what you want to do.");
+            Console.WriteLine("1) Remove  items from shopping list.");
+            Console.WriteLine("2) Add items to your shopping list.");
+            Console.WriteLine("3) View shopping list.");
+            Console.WriteLine("4) Finsih shopping list.");
 
             Console.ReadKey();
         }
