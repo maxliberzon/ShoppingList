@@ -46,42 +46,94 @@ namespace maxshoppinglist
             {
                 Console.WriteLine(items[i]);
             }
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("Chose what you want to do.");
-            Console.WriteLine("1) Remove  items from shopping list.");
-            Console.WriteLine("2) Add items to your shopping list.");
-            Console.WriteLine("3) View shopping list.");
-            Console.WriteLine("4) Finsih shopping list.");
 
-            option = int.Parse(Console.ReadLine());
-            
-            if(option == 1)
+
+            while (true)
             {
                 Console.WriteLine("");
                 Console.WriteLine("");
-                Console.WriteLine("Remove Test");
-            }
+                Console.WriteLine("Chose what you want to do.");
+                Console.WriteLine("1) Remove  items from shopping list.");
+                Console.WriteLine("2) Add items to your shopping list.");
+                Console.WriteLine("3) View shopping list.");
+                Console.WriteLine("4) Finsih shopping list.");
 
-            if(option == 2) 
-            {
-                Console.WriteLine("");
-                Console.WriteLine("");
-                Console.WriteLine("Add Test");
-            }
+                option = int.Parse(Console.ReadLine());
 
-            if(option == 3)
-            {
-                Console.WriteLine("");
-                Console.WriteLine("");
-                Console.WriteLine("View List Test");
-            }
+                if (option == 1)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("");
 
-            if(option == 4)
-            {
-                Console.WriteLine("");
-                Console.WriteLine("");
-                Console.WriteLine("Finish List Test");
+                    string[] temp = new string[items.Length - 1];
+
+                    Console.WriteLine("What item do you want to remove?");
+                    string remove = Console.ReadLine();
+                    int j = 0;
+
+                    for (int i = 0; i < items.Length; i++)
+                    {
+                      if(items[i] == remove)
+                        {
+                            i++;
+                        }
+
+                        temp[j] = items[i];
+                        j++;
+                    }
+
+
+
+                    items = temp;
+
+                }
+
+                if (option == 2)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                    Console.WriteLine("Add Test");
+
+                    //create new array that 1 size larger than items
+                    //copy everything from items into that new array
+
+                    string[] temp = new string[items.Length + 1];
+
+                    for (int i = 0; i < items.Length; i++)
+                    {
+                        temp[i] = items[i];
+
+                    }
+                        //ask the user for what they want to add, fill in the last item in temp with that word
+
+                        Console.WriteLine("What item do you want to add?");
+
+                        temp[temp.Length - 1] = Console.ReadLine();
+
+                    items = temp;
+                }
+                
+                if (option == 3)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                    Console.WriteLine("Shopping List");
+
+                    for (int i = 0; i < items.Length; i++)
+                    {
+                        Console.WriteLine(items[i]);
+                    }
+
+
+                }
+
+                if (option == 4)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                    Console.WriteLine("Finish List Test");
+                    //break/leave the while loop
+                }
             }
 
             
