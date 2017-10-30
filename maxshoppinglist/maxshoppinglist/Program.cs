@@ -71,7 +71,7 @@ namespace maxshoppinglist
                     string remove = Console.ReadLine();
                     int j = 0;
 
-                    for (int i = 0; i < items.Length; i++)
+                    for (int i = 0; i < temp.Length; i++)
                     {
                       if(items[i] == remove)
                         {
