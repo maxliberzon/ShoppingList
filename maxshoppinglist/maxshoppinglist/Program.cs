@@ -47,8 +47,8 @@ namespace maxshoppinglist
                 Console.WriteLine(items[i]);
             }
 
-
-            while (true)
+            bool run = true;
+            while (run == true)
             {
                 Console.WriteLine("");
                 Console.WriteLine("");
@@ -67,15 +67,19 @@ namespace maxshoppinglist
 
                     string[] temp = new string[items.Length - 1];
 
+
+                    //fix if same item remove 
                     Console.WriteLine("What item do you want to remove?");
                     string remove = Console.ReadLine();
                     int j = 0;
 
-                    for (int i = 0; i < temp.Length; i++)
+                    bool removed = false;
+                    for (int i = 0; i < items.Length; i++)
                     {
-                      if(items[i] == remove)
+                        if (!removed && items[i] == remove)
                         {
                             i++;
+                            removed = true;
                         }
 
                         temp[j] = items[i];
@@ -104,15 +108,15 @@ namespace maxshoppinglist
                         temp[i] = items[i];
 
                     }
-                        //ask the user for what they want to add, fill in the last item in temp with that word
+                    //ask the user for what they want to add, fill in the last item in temp with that word
 
-                        Console.WriteLine("What item do you want to add?");
+                    Console.WriteLine("What item do you want to add?");
 
-                        temp[temp.Length - 1] = Console.ReadLine();
+                    temp[temp.Length - 1] = Console.ReadLine();
 
                     items = temp;
                 }
-                
+
                 if (option == 3)
                 {
                     Console.WriteLine("");
@@ -126,17 +130,20 @@ namespace maxshoppinglist
 
 
                 }
-
+                
                 if (option == 4)
                 {
+                    run = false;
                     Console.WriteLine("");
                     Console.WriteLine("");
-                    Console.WriteLine("Finish List Test");
+                    Console.WriteLine("You finished your shopping cart.");
+                    Console.WriteLine("");
+                    Console.WriteLine("Press Enter to exit your list.");
                     //break/leave the while loop
                 }
             }
 
-            
+
 
             Console.ReadKey();
         }
