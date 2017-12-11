@@ -35,9 +35,10 @@ namespace maxshoppinglist
                 items[i] = Console.ReadLine();
 
 
+                
             }
 
-
+            
 
             Console.WriteLine("");
             Console.WriteLine("Shopping List:");
@@ -67,11 +68,14 @@ namespace maxshoppinglist
 
                     string[] temp = new string[items.Length - 1];
 
-
-                    //fix if same item remove 
+ 
                     Console.WriteLine("What item do you want to remove?");
                     string remove = Console.ReadLine();
                     int j = 0;
+
+                    Console.WriteLine("");
+
+                    Console.WriteLine("Would you like to remove every" remove );
 
                     bool removed = false;
                     for (int i = 0; i < items.Length; i++)
@@ -79,7 +83,7 @@ namespace maxshoppinglist
                         if (!removed && items[i] == remove)
                         {
                             i++;
-                            removed = true;
+                            removed = true;  
                         }
 
                         temp[j] = items[i];
@@ -96,10 +100,7 @@ namespace maxshoppinglist
                 {
                     Console.WriteLine("");
                     Console.WriteLine("");
-                    Console.WriteLine("Add Test");
 
-                    //create new array that 1 size larger than items
-                    //copy everything from items into that new array
 
                     string[] temp = new string[items.Length + 1];
 
@@ -108,7 +109,7 @@ namespace maxshoppinglist
                         temp[i] = items[i];
 
                     }
-                    //ask the user for what they want to add, fill in the last item in temp with that word
+
 
                     Console.WriteLine("What item do you want to add?");
 
@@ -139,7 +140,6 @@ namespace maxshoppinglist
                     Console.WriteLine("You finished your shopping cart.");
                     Console.WriteLine("");
                     Console.WriteLine("Press Enter to exit your list.");
-                    //break/leave the while loop
                 }
             }
 
