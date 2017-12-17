@@ -75,7 +75,7 @@ namespace maxshoppinglist
 
                     Console.WriteLine("");
 
-                    Console.WriteLine("Would you like to remove every" remove );
+                    Console.WriteLine("Would you like to remove everyone of this item");
 
                     bool removed = false;
                     for (int i = 0; i < items.Length; i++)
