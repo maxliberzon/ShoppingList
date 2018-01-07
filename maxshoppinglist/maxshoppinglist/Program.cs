@@ -10,11 +10,7 @@ namespace maxshoppinglist
     {
         static void Main(string[] args)
         {
-            //ask the user to enter a size
-            //store this into a variable
-            //then make a string array that is as big as the user asked for
-            //EX: user enters 5, make a 5 long array
-            //once we have this array, ask the user to enter the items that they want, and store each one into the array
+
 
             int size;
             int option;
@@ -75,7 +71,13 @@ namespace maxshoppinglist
 
                     Console.WriteLine("");
 
-                    Console.WriteLine("Would you like to remove everyone of this item");
+                    for (int i = 0; i < items.Length; i++)
+                    {
+                        if (remove != items[i])
+                        {
+                            Console.WriteLine("That item does not exist in your list.");
+                        }
+                    }
 
                     bool removed = false;
                     for (int i = 0; i < items.Length; i++)
@@ -86,11 +88,15 @@ namespace maxshoppinglist
                             removed = true;  
                         }
 
+
                         temp[j] = items[i];
+
                         j++;
+
+
                     }
 
-
+                    
 
                     items = temp;
 
@@ -110,7 +116,8 @@ namespace maxshoppinglist
 
                     }
 
-
+                    
+                 
                     Console.WriteLine("What item do you want to add?");
 
                     temp[temp.Length - 1] = Console.ReadLine();
