@@ -71,17 +71,31 @@ namespace maxshoppinglist
 
                     Console.WriteLine("");
 
+                    bool inArray = false;
+                    int indexOfIitemToRemove = -1;
                     for (int i = 0; i < items.Length; i++)
                     {
+                        /*
                         if (remove != items[i])
                         {
                             Console.WriteLine("That item does not exist in your list.");
                         }
+                        */
+                        if(remove == items[i])
+                        {
+                            inArray = true;
+                            indexOfIitemToRemove = i;
+                        }
                     }
 
+                    if(inArray != true)
+                    {
+                        Console.WriteLine("That item does not exist in your list.");
+                    }
                     bool removed = false;
                     for (int i = 0; i < items.Length; i++)
                     {
+                        /*
                         if (!removed && items[i] == remove)
                         {
                             i++;
@@ -91,9 +105,14 @@ namespace maxshoppinglist
 
                         temp[j] = items[i];
 
-                        j++;
-
-
+                        j++; 
+                        */
+                        if(indexOfIitemToRemove != i)
+                        {
+                            removed = true;
+                            temp[j] = items[i];
+                            i++;
+                        }
                     }
 
                     
