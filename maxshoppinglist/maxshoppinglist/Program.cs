@@ -49,7 +49,7 @@ namespace maxshoppinglist
             {
                 Console.WriteLine("");
                 Console.WriteLine("");
-                Console.WriteLine("Chose what you want to do.");
+                Console.WriteLine("Choose what you want to do.");
                 Console.WriteLine("1) Remove  items from shopping list.");
                 Console.WriteLine("2) Add items to your shopping list.");
                 Console.WriteLine("3) View shopping list.");
@@ -75,12 +75,7 @@ namespace maxshoppinglist
                     int indexOfIitemToRemove = -1;
                     for (int i = 0; i < items.Length; i++)
                     {
-                        /*
-                        if (remove != items[i])
-                        {
-                            Console.WriteLine("That item does not exist in your list.");
-                        }
-                        */
+
                         if(remove == items[i])
                         {
                             inArray = true;
@@ -91,27 +86,18 @@ namespace maxshoppinglist
                     if(inArray != true)
                     {
                         Console.WriteLine("That item does not exist in your list.");
+                        continue;
                     }
+                    
                     bool removed = false;
                     for (int i = 0; i < items.Length; i++)
                     {
-                        /*
-                        if (!removed && items[i] == remove)
-                        {
-                            i++;
-                            removed = true;  
-                        }
 
-
-                        temp[j] = items[i];
-
-                        j++; 
-                        */
                         if(indexOfIitemToRemove != i)
                         {
                             removed = true;
                             temp[j] = items[i];
-                            i++;
+                            j++;
                         }
                     }
 
