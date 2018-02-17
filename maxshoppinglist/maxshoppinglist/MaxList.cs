@@ -13,7 +13,33 @@ namespace maxshoppinglist
         //functions we need:
         //add function
         //remove function
-        
+
+        string[] items = new string[0];
+
+        public void Add(string item)
+        {
+            string[] temp = new string[items.Length + 1];
+
+            for (int i = 0; i < items.Length; i++)
+            {
+
+                temp[i] = items[i];
+
+            }
+        }
+
+        public void Remove(string item)
+        {
+            string[] temp = new string[items.Length - 1];
+
+            for (int i = 0; i < items.Length; i++)
+            {
+
+                temp[i] = items[i];
+
+            }
+
+        }
 
 
     }

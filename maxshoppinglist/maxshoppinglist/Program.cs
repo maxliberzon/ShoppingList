@@ -65,9 +65,9 @@ namespace maxshoppinglist
                     string[] temp = new string[items.Length - 1];
 
  
+                    int j = 0;
                     Console.WriteLine("What item do you want to remove?");
                     string remove = Console.ReadLine();
-                    int j = 0;
 
                     Console.WriteLine("");
 
